@@ -27,7 +27,7 @@ const AddProduct = () => {
           const description = data.description
           const newProduct = { name, price, quantity, image, description }
           console.log(newProduct)
-          fetch('https://polar-dusk-69774.herokuapp.com/product', {
+          fetch('https://manufacturer-server-side-iota.vercel.app/product', {
             method: "Post",
             headers: {
               'content-type': 'application/json',

@@ -24,7 +24,7 @@ const Order = ({ product, show, setShow }) => {
         console.log(order)
         if (quantityProduct > quantity && quantity > 300) {
             setError('')
-            fetch('https://polar-dusk-69774.herokuapp.com/order/add', {
+            fetch('https://manufacturer-server-side-iota.vercel.app/order/add', {
                 method: 'Post',
                 headers: {
                     'content-type': 'application/json',

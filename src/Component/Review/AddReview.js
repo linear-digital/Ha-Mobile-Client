@@ -14,7 +14,7 @@ const AddReview = ({  show }) => {
     const addreview = () => {
         if (user && desc && rating) {
             setSubmitting(true)
-            fetch('https://polar-dusk-69774.herokuapp.com/review', {
+            fetch('https://manufacturer-server-side-iota.vercel.app/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

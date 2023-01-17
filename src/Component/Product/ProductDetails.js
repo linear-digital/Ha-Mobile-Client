@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const [show, setShow] = useState(false)
     const pathname = location.pathname
     const id = pathname.split('/')
-    const url = `https://polar-dusk-69774.herokuapp.com/product/${id[2]}`
+    const url = `https://manufacturer-server-side-iota.vercel.app/product/${id[2]}`
     const { isLoading, data } = useQuery(['One-product'], () =>
         fetch(url, {
             method: "get",

@@ -18,7 +18,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                fetch(`https://polar-dusk-69774.herokuapp.com/users/${user.email}`, {
+                fetch(`https://manufacturer-server-side-iota.vercel.app/users/${user.email}`, {
                     method: "put",
                     headers: {
                         "content-type": "application/json"

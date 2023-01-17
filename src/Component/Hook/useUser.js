@@ -8,7 +8,7 @@ const useUser = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`https://polar-dusk-69774.herokuapp.com/users/${user?.email}`, {
+      fetch(`https://manufacturer-server-side-iota.vercel.app/users/${user?.email}`, {
         method: 'get',
         headers: {
           auth: localStorage.getItem('accessToken')

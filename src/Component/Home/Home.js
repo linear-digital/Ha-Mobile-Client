@@ -14,14 +14,14 @@ const Home = () => {
 
     const navigate = useNavigate()
     const [user, loading] = useAuthState(auth)
-    const url = 'https://polar-dusk-69774.herokuapp.com/product'
+    const url = 'https://manufacturer-server-side-iota.vercel.app/product'
     const { isLoading, data } = useQuery(['products'], () =>
         fetch(url).then(res =>
             res.json()
         )
     )
     const { isLoading : loading2, data: reviews, refetch } = useQuery(['reviews'], () =>
-        fetch('https://polar-dusk-69774.herokuapp.com/review').then(res =>
+        fetch('https://manufacturer-server-side-iota.vercel.app/review').then(res =>
             res.json()
         )
     )

@@ -58,7 +58,7 @@ const CheckoutForm = ({ order, clientSecret , setShow , refetch }) => {
         email: order.email,
         date: date
       }
-      fetch(`https://polar-dusk-69774.herokuapp.com/order/${order._id}`, {
+      fetch(`https://manufacturer-server-side-iota.vercel.app/order/${order._id}`, {
         method: "put",
         headers: {
           'content-type': 'application/json',

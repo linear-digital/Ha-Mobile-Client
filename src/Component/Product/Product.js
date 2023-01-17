@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading'
 import ProductCard from './ProductCard'
 
 const Product = () => {
-  const url = 'https://polar-dusk-69774.herokuapp.com/product'
+  const url = 'https://manufacturer-server-side-iota.vercel.app/product'
   const { isLoading, data } = useQuery(['products'], () =>
     fetch(url).then(res =>
       res.json()

@@ -37,7 +37,7 @@ const Register = () => {
                                 displayName: data.name,
                                 photoURL
                             })
-                            fetch(`https://polar-dusk-69774.herokuapp.com/users/${user.email}`, {
+                            fetch(`https://manufacturer-server-side-iota.vercel.app/users/${user.email}`, {
                                 method: "PUT",
                                 headers: {
                                     "content-type": "application/json"
@@ -49,7 +49,7 @@ const Register = () => {
                                     localStorage.setItem('accessToken', result.token)
                                     setLoading(false)
                                     navigate(from)
-                                    fetch(`https://polar-dusk-69774.herokuapp.com/profile/${email}`, {
+                                    fetch(`https://manufacturer-server-side-iota.vercel.app/profile/${email}`, {
                                         method: "put",
                                         headers: {
                                             'content-type': 'application/json',

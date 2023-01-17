@@ -9,7 +9,7 @@ import Payment from './Payment'
 
 const Orders = () => {
     const [user, loading] = useAuthState(auth)
-    const url = `https://polar-dusk-69774.herokuapp.com/order/${user.email}`
+    const url = `https://manufacturer-server-side-iota.vercel.app/order/${user.email}`
     const [show, setShow] = useState(false)
     const [showDel, setshowDel] = useState(false)
     const [order, setOrder] = useState({})
@@ -35,7 +35,7 @@ const Orders = () => {
 
     function goForPay() {
         setShow(true)
-        fetch("https://polar-dusk-69774.herokuapp.com/payment/create-payment-intent", {
+        fetch("https://manufacturer-server-side-iota.vercel.app/payment/create-payment-intent", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price: order.totalPrice }),
@@ -144,7 +144,7 @@ const PaymentModal = ({ show, setShow, order, clientSecret, refetch }) => {
 
 const ConfirmModal = ({ id, refetch, setshowDel, showDel }) => {
     function deletProduct() {
-        axios.delete(`https://polar-dusk-69774.herokuapp.com/order/${id}`, {
+        axios.delete(`https://manufacturer-server-side-iota.vercel.app/order/${id}`, {
             headers: {
                 auth: localStorage.getItem('accessToken')
             }

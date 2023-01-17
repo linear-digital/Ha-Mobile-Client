@@ -8,7 +8,7 @@ import Loading from '../Loading/Loading'
 import Payment from './Payment'
 
 const Orders = () => {
-    const url = `https://polar-dusk-69774.herokuapp.com/order/`
+    const url = `https://manufacturer-server-side-iota.vercel.app/order/`
     const [show, setShow] = useState(false)
     const [order, setOrder] = useState({})
     const [clientSecret, setClientSecret] = useState("");
@@ -28,7 +28,7 @@ const Orders = () => {
     const deleteOrder = (id) => {
         axios({
             method: 'delete',
-            url: `https://polar-dusk-69774.herokuapp.com/order/${id}`,
+            url: `https://manufacturer-server-side-iota.vercel.app/order/${id}`,
             headers: {
                 auth: localStorage.getItem('accessToken')
             }
@@ -39,7 +39,7 @@ const Orders = () => {
     }
     function goForPay() {
         setShow(true)
-        fetch("https://polar-dusk-69774.herokuapp.com/payment/create-payment-intent", {
+        fetch("https://manufacturer-server-side-iota.vercel.app/payment/create-payment-intent", {
             method: "post",
             headers: { "Content-Type": "application/json", auth: localStorage.getItem('accessToken') },
             body: JSON.stringify({ price: order.totalPrice }),
@@ -56,7 +56,7 @@ const Orders = () => {
             });
     }
     const shiped = (id) => {
-        fetch(`https://polar-dusk-69774.herokuapp.com/order/shipped/${id}`, {
+        fetch(`https://manufacturer-server-side-iota.vercel.app/order/shipped/${id}`, {
             method: "put",
             headers: {
                 auth: localStorage.getItem('accessToken')
