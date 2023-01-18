@@ -12,8 +12,8 @@ const Portfolio = () => {
           </div>
         </div>
         <h1 className='font-bold'>Name : <span className='font-normal'>Hazrat Ali</span></h1>
-        <h1 className='font-bold'>Email : <span className='font-normal'>hazratali113194@gmail.com</span></h1>
-        <h1 className='font-bold'>Phone : <span className='font-normal'> +8801581610293</span></h1>
+        <h1 className='font-bold'>Email : <span className='font-normal'>programmer.hazratali@gmail.com</span></h1>
+        <h1 className='font-bold'>Phone : <span className='font-normal'> +8801986234683</span></h1>
         <h1 className='font-bold mt-3'>Skills</h1>
         <ul className='grid grid-cols-2 lg:grid-cols-4 gap-3 mt-4 list-disc border p-5'>
           <li>
@@ -28,13 +28,14 @@ const Portfolio = () => {
           <li>Tailwind</li>
         </ul>
         <div className=''>
-          <p className='font-bold mt-5'> I am Hazrat Ali.  I am studied BSC in CSE </p>
+          {/* <p className='font-bold mt-5'> I am Hazrat Ali.  I am studied BSC in CSE </p> */}
           <p className='mt-4'>
-            University Of IUS . I want to be Software Engineer. Now I want to be MERN Stack Developer. I Love Tech  Field so that I love to do this Work. So my Next shortterm goal is to be a Developer, And My Largest Goal is to be Google or Microsoft Software Engineer.
+Hello I'm Hazrat Ali.I am currently pursuing BSC in CSE. I want to be a Software Engineer in near future.Now I am currently a MERN Stack Developer and I have passion in Web technologies. I am a fast learner and I am confident about myself.I believe I can face chanllenges of this always changing tech industry.I am looking forward to face the upcoming challenges.
+Talking about my hobby I love to read books related to programming and I love to develop things  with programming languages.Thanks for visiting my profile.
           </p>
           <p className='mt-3'>
-            How to Achieve My goal a common goal for engineer is learning a new skill so.
-            I am Focusing a new skill. Skills can be gain  day-by-day pratice. So, I should pratice more and more. I have to dedicated about my Goals.
+            {/* How to Achieve My goal a common goal for engineer is learning a new skill so. */}
+            {/* I am Focusing a new skill. Skills can be gain  day-by-day pratice. So, I should pratice more and more. I have to dedicated about my Goals. */}
           </p>
         </div>
 
