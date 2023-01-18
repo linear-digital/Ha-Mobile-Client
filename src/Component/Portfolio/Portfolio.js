@@ -49,10 +49,7 @@ const Portfolio = () => {
             things with programming languages.Thanks for visiting my profile. This is Hazrat 
             Ali. hello world
           </p>
-          <p className="mt-3">
-            {/* How to Achieve My goal a common goal for engineer is learning a new skill so. */}
-            {/* I am Focusing a new skill. Skills can be gain  day-by-day pratice. So, I should pratice more and more. I have to dedicated about my Goals. */}
-          </p>
+          
         </div>
       </div>
     </div>
