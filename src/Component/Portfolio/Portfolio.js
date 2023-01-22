@@ -46,8 +46,8 @@ const Portfolio = () => {
             chanllenges of this always changing tech industry.I am looking
             forward to face the upcoming challenges. Talking about my hobby I
             love to read books related to programming and I love to develop
-            things with programming languages.Thanks for visiting my profile. This is Hazrat 
-            Ali. hello world
+            things with programming languages.Thanks for visiting my profile.   
+             
           </p>
           
         </div>
