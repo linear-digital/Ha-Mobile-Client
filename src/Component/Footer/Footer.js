@@ -13,13 +13,14 @@ const Footer = () => {
                 </div>
                 <div>
                     <div className="grid grid-flow-col gap-4">
-                       <a href='https://www.facebook.com/HAZRATALIML' target='_blank'><i className="fa-brands text-2xl fa-twitter"></i></a>
-                        <a href='https://www.facebook.com/HAZRATALIML' target='_blank'><i className="fa-brands text-2xl fa-linkedin"></i></a>
+                        <a href='https://twitter.com/HazratLM' target='_blank'><i className="fa-brands text-2xl fa-twitter"></i></a>
+                        <a href='https://www.linkedin.com/in/hazratali9/' target='_blank'><i className="fa-brands text-2xl fa-linkedin"></i></a>
                         <a href='https://www.facebook.com/HAZRATALIML' target='_blank'><i className="fa-brands text-2xl fa-facebook-f"></i></a>
+                        
                     </div>
                 </div>
                 <div>
-                    <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                    <p>Copyright @ 2023-All Right Reserved By Hazrat Ali</p>
                 </div>
             </footer>
         </div>
