@@ -25,7 +25,7 @@ const Product = () => {
         <input type="text" onChange={(e)=> setValue(e.target.value)} placeholder="Type here" className="rounded-none input input-bordered w-full max-w-xs" />
         <button className='btn btn-primary rounded-none'>Search</button>
       </div>
-      <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-10 gap-7'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-10 gap-7 justify-items-center'>
         {
           data.filter((val)=> {
             if (searchValue === "") {

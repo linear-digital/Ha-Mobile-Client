@@ -10,7 +10,7 @@ const Slider = () => {
         "/images/carosel/5.jpg",
     ]
     return (
-        <div className='max-w-[400px] max-h-[400px] min-w-[550px] min-h-[400px] h-full w-full rounded-lg  shadow-2xl'>
+        <div className='max-w-[400px] max-h-[400px] lg:min-w-[550px] mt-10 lg:mt-0 h-full w-full rounded-lg '>
             <Swiper
                 loop={true}
                 autoplay={{
@@ -21,12 +21,13 @@ const Slider = () => {
                 {
                     sliders.map((slider, index) => {
                         return <SwiperSlide key={index}>
-                            <div className='min-w-[550px] min-h-[400px] bg-cover bg-center bg-no-repeat rounded'
+                            {/* <div className='lg:min-w-[550px] w-fu min-h-[450px] bg-cover bg-center bg-no-repeat rounded'
                                 style={{
                                     backgroundImage: `url(${slider})`,
                                 }}
                             >
-                            </div>
+                            </div> */}
+                            <img src={slider} alt="" className='w-full'/>
                         </SwiperSlide>
                     })
                 }

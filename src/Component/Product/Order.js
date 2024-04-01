@@ -21,7 +21,7 @@ const Order = ({ product, show, setShow }) => {
         const image = product.image
         const order = []
         console.log(order)
-        if (quantityProduct > quantity && quantity > 300) {
+        if (quantityProduct > quantity && quantity >= 300) {
             setError('')
             fetch('http://localhost:4000/order/add', {
                 method: 'Post',
@@ -41,7 +41,6 @@ const Order = ({ product, show, setShow }) => {
 
         } else {
             setError(`Minumum Order Limit ${300} Maximum Order Limit ${product.quantity}`)
-            console.log(quantity)
             setLoading(false)
             
         }

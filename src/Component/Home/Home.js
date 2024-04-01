@@ -28,32 +28,27 @@ const Home = () => {
         return <Loading />
     }
     return (
-        <div>
-            <header>
-                <div className="hero w-full min-h-auto py-20 bg-base-100">
-                    <div className="hero-content w-full justify-between flex-col lg:flex-row">
+        <div className=''>
+            <div className="hero w-full min-h-auto py-20 bg-base-100">
+                <div className="hero-content w-full justify-between flex-col lg:flex-row md:flex-col">
 
-                        <div className='ml-5'>
-                            <h1 className='text-xl mb-4 font-bold text-neutral'>Wellcome To</h1>
-                            <h1 className="text-5xl leading-tight font-bold text-left">
-                                Hazrat Ali <br/>
-                                Mobile Mobile Shop</h1>
-                            <p className="py-6 text-left">
-                                We Provide All Type Of Mobile Parts And Accessories</p>
-                            <div className='flex justify-start'>
-                                <button className='btn' onClick={() => {
-                                    user ? navigate('/dashboard') : navigate('/login')
-                                }}>Get Started</button>
+                    <div className='ml-5'>
+                        <h1 className='text-xl mb-4 font-bold text-neutral'>Wellcome To</h1>
+                        <h1 className="text-5xl leading-tight font-bold text-left">
+                            Hazrat Ali <br />
+                            Mobile Mobile Shop</h1>
+                        <p className="py-6 text-left">
+                            We Provide All Type Of Mobile Parts And Accessories</p>
+                        <div className='flex justify-start'>
+                            <button className='btn' onClick={() => {
+                                user ? navigate('/product') : navigate('/login')
+                            }}>Get Started</button>
 
-                            </div>
                         </div>
-                        <Slider />
                     </div>
+                    <Slider />
                 </div>
-            </header>
-
-
-
+            </div>
 
             <div className='container mx-auto mt-14 '>
                 <h1 className='text-center text-4xl my-5 font-bold'>Our  Products</h1>
@@ -71,7 +66,7 @@ const Home = () => {
                     <div className="stat place-items-center">
                         <div className="stat-title">New Orders</div>
                         <div className="stat-value">301</div>
-                        <div className="stat-desc mt-2">From March To May 2022</div>
+                        <div className="stat-desc mt-2">From March To May {2022}</div>
                     </div>
                     <div className="stat place-items-center">
                         <div className="stat-title">Deliverd</div>
