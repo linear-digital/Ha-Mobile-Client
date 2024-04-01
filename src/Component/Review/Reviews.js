@@ -12,7 +12,7 @@ const Reviews = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
     const { isLoading, data, refetch } = useQuery(['reviews'], () =>
-        fetch('https://manufacturer-server-side-iota.vercel.app/review')
+        fetch('http://localhost:4000/review')
             .then(res =>
                 res.json()
             )

@@ -7,9 +7,9 @@ import Loading from '../Loading/Loading'
 const RequireAuth = ({ children }) => {
     const location = useLocation()
     const [user, loading] = useAuthState(auth)
-    if (user) {
+    const token = localStorage.getItem('accessToken')
+    if (user && token) {
         return children
-
     }
     if (loading) {
         return <Loading />

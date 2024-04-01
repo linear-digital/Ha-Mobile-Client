@@ -1,32 +1,30 @@
-import { Button } from '@mui/material'
+
 import React from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth'
 import { useQuery } from 'react-query'
 import { Link, useNavigate } from 'react-router-dom'
-import About from '../About/About'
 import Contact from '../Contact/Contact'
-import auth from '../Firebase/firebase.init'
-import bannerImg from '../Images/banner.jpg'
 import Loading from '../Loading/Loading'
 import ProductCard from '../Product/ProductCard'
 import ReviewCard from '../Review/ReviewCard'
+import Slider from './Slider'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../Firebase/firebase.init';
 const Home = () => {
-
-    const navigate = useNavigate()
     const [user, loading] = useAuthState(auth)
-    const url = 'https://manufacturer-server-side-iota.vercel.app/product'
+    const navigate = useNavigate()
+    const url = 'http://localhost:4000/product'
     const { isLoading, data } = useQuery(['products'], () =>
         fetch(url).then(res =>
             res.json()
         )
     )
-    const { isLoading : loading2, data: reviews, refetch } = useQuery(['reviews'], () =>
-        fetch('https://manufacturer-server-side-iota.vercel.app/review').then(res =>
+    const { isLoading: loading2, data: reviews } = useQuery(['reviews'], () =>
+        fetch('http://localhost:4000/review').then(res =>
             res.json()
         )
     )
 
-    if (isLoading || loading || loading2) {
+    if (isLoading || loading2 || loading) {
         return <Loading />
     }
     return (
@@ -36,16 +34,20 @@ const Home = () => {
                     <div className="hero-content w-full justify-between flex-col lg:flex-row">
 
                         <div className='ml-5'>
-                            <h1 className='text-xl mb-4 font-bold text-neutral'>Wellcome To Our</h1>
-                            <h1 className="text-5xl leading-tight font-bold text-left">Mobile Accesories & <br/> parts Shop</h1>
+                            <h1 className='text-xl mb-4 font-bold text-neutral'>Wellcome To</h1>
+                            <h1 className="text-5xl leading-tight font-bold text-left">
+                                Hazrat Ali <br/>
+                                Mobile Mobile Shop</h1>
                             <p className="py-6 text-left">
                                 We Provide All Type Of Mobile Parts And Accessories</p>
                             <div className='flex justify-start'>
-                                <button className='btn' onClick={() => navigate('/login')}>Get Started</button>
+                                <button className='btn' onClick={() => {
+                                    user ? navigate('/dashboard') : navigate('/login')
+                                }}>Get Started</button>
 
                             </div>
                         </div>
-                        <img src='https://5.imimg.com/data5/ED/MU/GO/SELLER-25849533/mobile-accessories-500x500.png' className="max-w-xl w-full rounded-lg  shadow-2xl" alt='banner img' />
+                        <Slider />
                     </div>
                 </div>
             </header>

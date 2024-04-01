@@ -24,7 +24,9 @@ import Profile from './Component/Dashboard/Profile';
 import AllOrders from './Component/Dashboard/AllOrders';
 import Blog from './Component/Blog/Blog';
 import useUser from './Component/Hook/useUser';
-
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 function App() {
 
   const [currentUser] = useUser()

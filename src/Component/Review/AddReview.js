@@ -14,7 +14,7 @@ const AddReview = ({  show }) => {
     const addreview = () => {
         if (user && desc && rating) {
             setSubmitting(true)
-            fetch('https://manufacturer-server-side-iota.vercel.app/review', {
+            fetch('http://localhost:4000/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

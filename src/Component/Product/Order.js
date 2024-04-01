@@ -10,7 +10,6 @@ const Order = ({ product, show, setShow }) => {
     const [user, userLoading] = useAuthState(auth)
     const [loading, setLoading] = useState(false)
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    const [limit, setLimit] = useState(0)
     const quantityProduct = parseInt(product.quantity)
     const onSubmit = (data) => {
         setLoading(true)
@@ -24,7 +23,7 @@ const Order = ({ product, show, setShow }) => {
         console.log(order)
         if (quantityProduct > quantity && quantity > 300) {
             setError('')
-            fetch('https://manufacturer-server-side-iota.vercel.app/order/add', {
+            fetch('http://localhost:4000/order/add', {
                 method: 'Post',
                 headers: {
                     'content-type': 'application/json',

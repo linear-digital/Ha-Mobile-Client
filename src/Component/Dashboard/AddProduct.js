@@ -27,7 +27,7 @@ const AddProduct = () => {
           const description = data.description
           const newProduct = { name, price, quantity, image, description }
           console.log(newProduct)
-          fetch('https://manufacturer-server-side-iota.vercel.app/product', {
+          fetch('http://localhost:4000/product', {
             method: "Post",
             headers: {
               'content-type': 'application/json',

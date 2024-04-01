@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
@@ -6,7 +7,7 @@ import auth from '../Firebase/firebase.init';
 import Social from './Social';
 
 const Login = () => {
-    const [loading , setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -18,7 +19,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                fetch(`https://manufacturer-server-side-iota.vercel.app/users/${user.email}`, {
+                fetch(`http://localhost:4000/users/${user.email}`, {
                     method: "put",
                     headers: {
                         "content-type": "application/json"
@@ -66,7 +67,7 @@ const Login = () => {
                             </div>
                             <p className='text-red-500'>{error}</p>
                             <div className="form-control mt-6">
-                                <button type='submit' className={`btn btn-primary ${loading&& "loading"}`}>{`${loading ? "Login ...." : "Login"}`}</button>
+                                <button type='submit' className={`btn btn-primary ${loading && "loading"}`}>{`${loading ? "Login ...." : "Login"}`}</button>
                             </div>
                             <p className='mt-3'> Not a user
                                 <Link to='/register' className="ml-3 text-blue-600 link link-hover">Sign Up</Link>

@@ -84,9 +84,7 @@ const Navigations = (user) => {
                     Products
                 </Link>
             </li>
-            <li className='mx-2'><NavLink to='/portfolio'>Portfolio</NavLink></li>
             <li className='mx-2'><NavLink to='/review'>Reviews</NavLink></li>
-            <li className='mx-2'><NavLink to='/blogs'>Blogs</NavLink></li>
             <li className='mx-2'><NavLink to='/contact'>Contact</NavLink></li>
 
         </>

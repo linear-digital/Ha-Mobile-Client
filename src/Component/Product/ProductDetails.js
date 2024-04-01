@@ -9,7 +9,7 @@ const ProductDetails = () => {
     const [show, setShow] = useState(false)
     const pathname = location.pathname
     const id = pathname.split('/')
-    const url = `https://manufacturer-server-side-iota.vercel.app/product/${id[2]}`
+    const url = `http://localhost:4000/product/${id[2]}`
     const { isLoading, data } = useQuery(['One-product'], () =>
         fetch(url, {
             method: "get",

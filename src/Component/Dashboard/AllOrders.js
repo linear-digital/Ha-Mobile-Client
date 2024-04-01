@@ -8,7 +8,7 @@ import Loading from '../Loading/Loading'
 import Payment from './Payment'
 
 const Orders = () => {
-    const url = `https://manufacturer-server-side-iota.vercel.app/order/`
+    const url = `http://localhost:4000/order/`
     const [show, setShow] = useState(false)
     const [order, setOrder] = useState({})
     const [clientSecret, setClientSecret] = useState("");
@@ -28,7 +28,7 @@ const Orders = () => {
     const deleteOrder = (id) => {
         axios({
             method: 'delete',
-            url: `https://manufacturer-server-side-iota.vercel.app/order/${id}`,
+            url: `http://localhost:4000/order/${id}`,
             headers: {
                 auth: localStorage.getItem('accessToken')
             }
@@ -39,7 +39,7 @@ const Orders = () => {
     }
     function goForPay() {
         setShow(true)
-        fetch("https://manufacturer-server-side-iota.vercel.app/payment/create-payment-intent", {
+        fetch("http://localhost:4000/payment/create-payment-intent", {
             method: "post",
             headers: { "Content-Type": "application/json", auth: localStorage.getItem('accessToken') },
             body: JSON.stringify({ price: order.totalPrice }),
@@ -56,7 +56,7 @@ const Orders = () => {
             });
     }
     const shiped = (id) => {
-        fetch(`https://manufacturer-server-side-iota.vercel.app/order/shipped/${id}`, {
+        fetch(`http://localhost:4000/order/shipped/${id}`, {
             method: "put",
             headers: {
                 auth: localStorage.getItem('accessToken')
@@ -92,7 +92,7 @@ const Orders = () => {
                     </thead>
                     <tbody>
                         {
-                            data.map(((product, index) =>
+                            data?.map(((product, index) =>
                                 <tr key={product._id}>
                                     <th className='text-center'>{index + 1}</th>
                                     <td className='text-center'>

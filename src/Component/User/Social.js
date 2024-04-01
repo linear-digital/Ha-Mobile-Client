@@ -2,7 +2,6 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/firebase.init';
-import Loading from '../Loading/Loading';
 
 const Social = () => {
     const [loading, setLoading] = useState(false)
@@ -15,7 +14,7 @@ const Social = () => {
         signInWithPopup(auth, provider)
             .then((result) => {
                 const user = result.user;
-                fetch(`https://manufacturer-server-side-iota.vercel.app/users/${user.email}`, {
+                fetch(`http://localhost:4000/users/${user.email}`, {
                     method: "put",
                     headers: {
                         "content-type": "application/json"
@@ -24,10 +23,11 @@ const Social = () => {
                 })
                     .then(res => res.json())
                     .then(result => {
+                        console.log(result);
                         localStorage.setItem('accessToken', result.token)
                         setLoading(false)
                         navigate(from)
-                        fetch(`https://manufacturer-server-side-iota.vercel.app/profile/${user.email}`, {
+                        fetch(`http://localhost:4000/profile/${user.email}`, {
                             method: "put",
                             headers: {
                                 'content-type': 'application/json',

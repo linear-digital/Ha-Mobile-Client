@@ -1,10 +1,11 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import Loading from '../Loading/Loading'
 import ProductCard from './ProductCard'
 
 const Product = () => {
-  const url = 'https://manufacturer-server-side-iota.vercel.app/product'
+  const url = 'http://localhost:4000/product'
   const { isLoading, data } = useQuery(['products'], () =>
     fetch(url).then(res =>
       res.json()
