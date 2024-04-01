@@ -27,6 +27,7 @@ import useUser from './Component/Hook/useUser';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Team from './Component/Team/Team';
 function App() {
 
   const [currentUser] = useUser()
@@ -40,6 +41,7 @@ function App() {
           <Route path='*' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/review' element={<Reviews />} />
+          <Route path='/team' element={<Team />} />
           <Route path='/blogs' element={<Blog />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/portfolio' element={<Portfolio />} />
