@@ -51,7 +51,6 @@ const Orders = () => {
                 return res.json()
             })
             .then((data) => {
-                console.log(data);
                 setClientSecret(data.clientSecret)
             });
     }
@@ -63,6 +62,7 @@ const Orders = () => {
             },
         }).then(res => {
             if (res.status === 200) {
+                setShow(false)
                 toast.success('Product Shipped Success')
                 refetch()
             }

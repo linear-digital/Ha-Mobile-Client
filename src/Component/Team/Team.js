@@ -6,7 +6,7 @@ const Team = () => {
             <h1 className='lg:text-4xl font-semibold md:text-4xl text-xl text-center'>Meet My Team</h1>
             <div className='flex flex-wrap justify-center items-center mt-10 gap-5'>
                 <TeamCard
-                    image={"/images/mamber-3.png"}
+                    image={"/images/image.png"}
                     name={"Hazrat Ali"}
                 />
                 <TeamCard
