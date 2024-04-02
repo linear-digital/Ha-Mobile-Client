@@ -36,7 +36,7 @@ const Home = () => {
                         <h1 className='text-xl mb-4 font-bold text-neutral'>Wellcome To</h1>
                         <h1 className="text-5xl leading-tight font-bold text-left">
                             Hazrat Ali <br />
-                            Mobile Mobile Shop</h1>
+                            Mobile Shop</h1>
                         <p className="py-6 text-left">
                             We Provide All Type Of Mobile Parts And Accessories</p>
                         <div className='flex justify-start'>
