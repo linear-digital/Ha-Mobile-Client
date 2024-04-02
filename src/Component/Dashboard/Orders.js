@@ -9,7 +9,7 @@ import Payment from './Payment'
 
 const Orders = () => {
     const [user, loading] = useAuthState(auth)
-    const url = `http://localhost:4000/order/${user.email}`
+    const url = `https://ha-mobile-server.vercel.app/order/${user.email}`
     const [show, setShow] = useState(false)
     const [showDel, setshowDel] = useState(false)
     const [order, setOrder] = useState({})
@@ -26,7 +26,7 @@ const Orders = () => {
             res.json()
         )
     )
-  
+
     const deleteOrder = (id) => {
         setId(id)
         setshowDel(true)
@@ -35,7 +35,7 @@ const Orders = () => {
 
     function goForPay() {
         setShow(true)
-        fetch("http://localhost:4000/payment/create-payment-intent", {
+        fetch("https://ha-mobile-server.vercel.app/payment/create-payment-intent", {
             method: "post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price: order.totalPrice }),
@@ -51,6 +51,7 @@ const Orders = () => {
                 setClientSecret(data.clientSecret)
             });
     }
+
     if (isLoading || loading) {
         return <Loading />
     }
@@ -85,7 +86,7 @@ const Orders = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className='text-center'>{product.name.slice(0,30)}</td>
+                                    <td className='text-center'>{product.name.slice(0, 30)}</td>
                                     <td className='text-center'>${product.price}</td>
                                     <td className='text-center'>${product.totalPrice}</td>
                                     <td className='text-center'>{product.quantity}p</td>
@@ -115,7 +116,7 @@ const Orders = () => {
                 </table>
             </div>
             <ConfirmModal showDel={showDel} setshowDel={setshowDel} id={id} refetch={refetch} />
-            <PaymentModal show={show} setShow={setShow} order={order} clientSecret={clientSecret} refetch={refetch}/>
+            <PaymentModal show={show} setShow={setShow} order={order} clientSecret={clientSecret} refetch={refetch} />
         </div>
     )
 }
@@ -132,7 +133,7 @@ const PaymentModal = ({ show, setShow, order, clientSecret, refetch }) => {
                     <div className="card relative w-full max-w-md shadow-2xl bg-base-100">
                         <button className='absolute top-0 right-0 bg-red-500 p-2 text-white' onClick={() => setShow(false)}>Close</button>
                         <div className="card-body w-full">
-                            <Payment order={order} clientSecret={clientSecret} setShow={setShow} refetch={refetch}/>
+                            <Payment order={order} clientSecret={clientSecret} setShow={setShow} refetch={refetch} />
                         </div>
                     </div>
                 </div>
@@ -144,7 +145,7 @@ const PaymentModal = ({ show, setShow, order, clientSecret, refetch }) => {
 
 const ConfirmModal = ({ id, refetch, setshowDel, showDel }) => {
     function deletProduct() {
-        axios.delete(`http://localhost:4000/order/${id}`, {
+        axios.delete(`https://ha-mobile-server.vercel.app/order/${id}`, {
             headers: {
                 auth: localStorage.getItem('accessToken')
             }

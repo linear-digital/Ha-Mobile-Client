@@ -23,7 +23,7 @@ const Order = ({ product, show, setShow }) => {
         console.log(order)
         if (quantityProduct > quantity && quantity >= 300) {
             setError('')
-            fetch('http://localhost:4000/order/add', {
+            fetch('https://ha-mobile-server.vercel.app/order/add', {
                 method: 'Post',
                 headers: {
                     'content-type': 'application/json',

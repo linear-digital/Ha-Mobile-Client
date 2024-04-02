@@ -8,7 +8,7 @@ import Loading from '../Loading/Loading'
 import Payment from './Payment'
 
 const Orders = () => {
-    const url = `http://localhost:4000/order/`
+    const url = `https://ha-mobile-server.vercel.app/order/`
     const [show, setShow] = useState(false)
     const [order, setOrder] = useState({})
     const [clientSecret, setClientSecret] = useState("");
@@ -28,7 +28,7 @@ const Orders = () => {
     const deleteOrder = (id) => {
         axios({
             method: 'delete',
-            url: `http://localhost:4000/order/${id}`,
+            url: `https://ha-mobile-server.vercel.app/order/${id}`,
             headers: {
                 auth: localStorage.getItem('accessToken')
             }
@@ -39,7 +39,7 @@ const Orders = () => {
     }
     function goForPay() {
         setShow(true)
-        fetch("http://localhost:4000/payment/create-payment-intent", {
+        fetch("https://ha-mobile-server.vercel.app/payment/create-payment-intent", {
             method: "post",
             headers: { "Content-Type": "application/json", auth: localStorage.getItem('accessToken') },
             body: JSON.stringify({ price: order.totalPrice }),
@@ -55,7 +55,7 @@ const Orders = () => {
             });
     }
     const shiped = (id) => {
-        fetch(`http://localhost:4000/order/shipped/${id}`, {
+        fetch(`https://ha-mobile-server.vercel.app/order/shipped/${id}`, {
             method: "put",
             headers: {
                 auth: localStorage.getItem('accessToken')

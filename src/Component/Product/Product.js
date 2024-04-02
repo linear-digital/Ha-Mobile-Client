@@ -5,7 +5,7 @@ import Loading from '../Loading/Loading'
 import ProductCard from './ProductCard'
 
 const Product = () => {
-  const url = 'http://localhost:4000/product'
+  const url = 'https://ha-mobile-server.vercel.app/product'
   const { isLoading, data } = useQuery(['products'], () =>
     fetch(url).then(res =>
       res.json()

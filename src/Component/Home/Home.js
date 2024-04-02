@@ -12,14 +12,14 @@ import auth from '../Firebase/firebase.init';
 const Home = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
-    const url = 'http://localhost:4000/product'
+    const url = 'https://ha-mobile-server.vercel.app/product'
     const { isLoading, data } = useQuery(['products'], () =>
         fetch(url).then(res =>
             res.json()
         )
     )
     const { isLoading: loading2, data: reviews } = useQuery(['reviews'], () =>
-        fetch('http://localhost:4000/review').then(res =>
+        fetch('https://ha-mobile-server.vercel.app/review').then(res =>
             res.json()
         )
     )

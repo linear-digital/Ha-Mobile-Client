@@ -7,7 +7,7 @@ const useUser = () => {
   const [currentUser, setUser] = useState({})
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:4000/users/${user?.email}`, {
+      fetch(`https://ha-mobile-server.vercel.app/users/${user?.email}`, {
         method: 'get',
         headers: {
           auth: localStorage.getItem('accessToken')

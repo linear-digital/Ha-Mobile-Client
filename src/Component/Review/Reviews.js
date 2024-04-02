@@ -12,7 +12,7 @@ const Reviews = () => {
     const [user, loading] = useAuthState(auth)
     const navigate = useNavigate()
     const { isLoading, data, refetch } = useQuery(['reviews'], () =>
-        fetch('http://localhost:4000/review')
+        fetch('https://ha-mobile-server.vercel.app/review')
             .then(res =>
                 res.json()
             )
