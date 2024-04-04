@@ -66,7 +66,7 @@ const Home = () => {
                     <div className="stat place-items-center">
                         <div className="stat-title">New Orders</div>
                         <div className="stat-value">301</div>
-                        <div className="stat-desc mt-2">From March To May {2022}</div>
+                        <div className="stat-desc mt-2">From March To May {2024}</div>
                     </div>
                     <div className="stat place-items-center">
                         <div className="stat-title">Deliverd</div>
